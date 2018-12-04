@@ -35,7 +35,7 @@ public class ConsoleErrorHandler : MonoBehaviour
         {
             case LogType.Log:
                 log = string.Format("<color=white>{0}</color>", log);
-                stackTrace = string.Format("<color=red>{0}</color>", stackTrace);
+                //stackTrace = string.Format("<color=red>{0}</color>", stackTrace);
                 outPutText = log + "\n" + stackTrace + "\n";
                 break;
             case LogType.Error:
