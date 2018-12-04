@@ -7,6 +7,19 @@ namespace Nimushiki.BulgariaPad
 {
 	public class BulgariaPadInitializer : MonoBehaviour
 	{
+        //シングルトン化
+        private static BulgariaPadInitializer instance;
+        public static BulgariaPadInitializer Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = FindObjectOfType<BulgariaPadInitializer>();
+                }
+                return instance;
+            }
+        }
 
 		//キャリブレーション時のメッセージ表示部
 		//うまい実装が分からなかったので暫定処理

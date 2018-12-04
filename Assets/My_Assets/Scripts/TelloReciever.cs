@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GON.TelloControll;
+using Nimushiki.BulgariaPad;
 
 public class TelloReciever : MonoBehaviour {
 
@@ -12,8 +13,29 @@ public class TelloReciever : MonoBehaviour {
 
     private void Start()
     {
+        BulgariaPadInput.ResetPosition();
+
+        BulgariaPadInitializer.Instance.StartCalibration();
+
         controller.Initialize();
     }
+
+    private void Update()
+    {
+        if (BulgariaPadInput.ButtonA)
+        {
+            Down();
+        }
+
+        if (BulgariaPadInput.ButtonB)
+        {
+            Up();
+        }
+    }
+
+
+
+
 
     public void Connect()
     {
@@ -35,7 +57,10 @@ public class TelloReciever : MonoBehaviour {
         controller.Down(MoveSpeed);
     }
 
-
+    public void Up()
+    {
+        controller.Down(-MoveSpeed);
+    }
 
 
 }
