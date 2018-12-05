@@ -31,7 +31,7 @@ public class MinTest : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        client.Connect(host, port);
 	}
 	
 	// Update is called once per frame
